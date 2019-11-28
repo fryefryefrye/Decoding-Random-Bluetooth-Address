@@ -34,7 +34,7 @@ You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Ar
 |  7  |  MISO  | digIO 12  |  digIO 50  |
 |  8  |  IRQ  |  -  |-|
 <br> 
-![](https://github.com/fryefryefrye/Open-Source-RKS/raw/master/img/uno_nrf.jpg)
+![](https://github.com/fryefryefrye/Open-Source-RKS/raw/master/img/uno_nrf.jpg)<br> 
 
 
 
