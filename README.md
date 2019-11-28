@@ -1,3 +1,22 @@
+## Decoding Random Bluetooth Address of IOS 
+To protect the private, Bluetooth 4.0 Low Energy usually to do advertising with a random private address. <br>
+<br>
+The private address may be of either of the following two sub-types: <br>
+• Non-resolvable private address<br>
+• Resolvable private address<br>
+<br>
+A resolvable private address may be resolved if the corresponding device’s IRK is available using this procedure. If a resolvable private address is resolved, the device can associate this address with the peer device. <br>
+
+When IOS is enabling with continuity service, it will always sending BLE advertising to let other IOS device to know. Of course, the Bluetooth MAC Address is random and changed every 15 minutes. <br>
+
+But this random address is a Resolvable private address. If the IRK of this IOS device is known, the random address can be determined if it belongs to this device. <br>
+
+## Get IRK of you iPhone
+Use an ESP32 board and download with “get_irk” project. It will start a BLE service.
+Use your iPhone install with “LightBlue” APP, find the “ESP_BLE_SECURITY” service, and connect it, the IRK will be print out.
+![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/get_irk.jpg) <br>
+
+
 # 蓝牙无线接近开关
 
 ## 原理
