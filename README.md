@@ -23,21 +23,9 @@ https://github.com/Pranavgulati/RF24BLE<br>
 Download “nrf_ble_add” project into a Arduino nano board, you can Monitor BLE advertising and determine if the MAC address in the air is belong to your iPhone.<br>
 You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Arduino follow the table.<br>
 
-| PIN  | NRF24L01|Arduino UNO/NANO|Mega1280/2560|
-| ---------- | -----------| -----------| -----------|
-|  1  |  GND  |  GND  |  GND  |
-|  2  |  VCC  |  3.3V  |  3.3V  |
-|  3  |  CE   |  digIO 7  |  digIO 7  |
-|  4  |  CSN  |  digIO 8  |  digIO 8  |
-|  5  |  SCK   |  digIO 13  |  digIO 52  |
-|  6  |  MOSI  |  digIO 11  |  digIO 51  |
-|  7  |  MISO  | digIO 12  |  digIO 50  |
-|  8  |  IRQ  |  -  |-|
-<br> 
 ![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/uno_nrf.jpg) <br>
+
 ![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/ResolveAddress.jpg) <br>
-
-
 
 
 # 蓝牙无线接近开关
