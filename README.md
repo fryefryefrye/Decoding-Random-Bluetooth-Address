@@ -32,6 +32,9 @@ You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Ar
 
 ![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/ResolveAddress.jpg) <br>
 
+## Reference
+Most of the code is copied and pasted from the following project.Great Thanks to this great company and their amazing ESP32 module with source code.<br>
+https://github.com/espressif/esp-idf <br>
 
 # 蓝牙无线接近开关
 
