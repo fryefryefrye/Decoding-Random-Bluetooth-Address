@@ -12,7 +12,7 @@ When IOS is enabling with continuity service, it will always sending BLE adverti
 
 But this random address is a Resolvable private address. If the IRK of this IOS device is known, the random address can be determined if it belongs to this device. <br>
 
-## Get IRK of you iPhone
+## Get IRK of your iPhone
 Use an ESP32 board and download with “get_irk” project. It will start a BLE service. <br>
 Use your iPhone install with “LightBlue” APP, find the “ESP_BLE_SECURITY” service, and connect it, the IRK will be print out. <br>
 ![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/get_irk.jpg) <br>
@@ -20,7 +20,7 @@ Use your iPhone install with “LightBlue” APP, find the “ESP_BLE_SECURITY�
 ## Monitor BLE advertising with nRF24L01
 With the help of the following project, we can Monitor BLE advertising with very cheap nRF24L01 module<br>
 https://github.com/Pranavgulati/RF24BLE<br>
-Download “nrf_ble_add” project into a Arduino nano board, you can Monitor BLE advertising and determine if the MAC address in the air is belong to your iPhone.
+Download “nrf_ble_add” project into a Arduino nano board, you can Monitor BLE advertising and determine if the MAC address in the air is belong to your iPhone.<br>
 You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Arduino follow the table.<br>
 
 | PIN  | NRF24L01|Arduino UNO/NANO|Mega1280/2560|
@@ -34,7 +34,8 @@ You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Ar
 |  7  |  MISO  | digIO 12  |  digIO 50  |
 |  8  |  IRQ  |  -  |-|
 <br> 
-![](https://github.com/fryefryefrye/Open-Source-RKS/raw/master/img/uno_nrf.jpg)<br> 
+![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/uno_nrf.jpg) <br>
+![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/ResolveAddress.jpg) <br>
 
 
 
