@@ -14,6 +14,8 @@ But this random address is a Resolvable private address. If the IRK of this IOS 
 
 ## Get IRK of your iPhone
 Use an ESP32 board and download with “get_irk” project. It will start a BLE service. <br>
+Pay attention on following settings.<br>
+![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/arduino_setting.jpg) <br>
 Use your iPhone install with “LightBlue” APP, find the “ESP_BLE_SECURITY” service, and connect it, the IRK will be print out. <br>
 ![](https://github.com/fryefryefrye/Bluetooth-keyless-system/raw/master/img/get_irk.jpg) <br>
 
