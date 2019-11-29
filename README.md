@@ -22,9 +22,9 @@ With the help of the following project, we can Monitor BLE advertising with very
 https://github.com/Pranavgulati/RF24BLE<br>
 https://github.com/nRF24/RF24<br>
 Install above two library into Arduino.<br>
-Download “nrf_ble_add” project into a Arduino nano board, you can Monitor BLE advertising and determine if the MAC address in the air is belong to your iPhone.<br>
+Download “nrf_ble_add” project into a Arduino nano board, you can Monitor BLE advertising and determine if the MAC address in the air is belong to your iPhone.<br><br>
 These is only one key function you need to call to check MAC address. Everything needed for this function is in key.h file.You can use it in your other project.<br>
-BOOLEAN btm_ble_addr_resolvable(BD_ADDR rpa, esp_bt_octet16_t irk)<br>
+BOOLEAN btm_ble_addr_resolvable(BD_ADDR rpa, esp_bt_octet16_t irk)<br><br>
 
 You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Arduino follow the table.<br>
 
