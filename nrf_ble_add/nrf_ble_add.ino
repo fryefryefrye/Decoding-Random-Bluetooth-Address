@@ -7,7 +7,7 @@
 
 
 
-#define IRK_LIST_NUMBER 2char * IrkListName[IRK_LIST_NUMBER] = {"A","B"};uint8_t irk[IRK_LIST_NUMBER][ESP_BT_OCTET16_LEN]= {	//IRK of A	{0x92,0xE1,0x70,0x7B,0x84,0xDC,0x21,0x4D,0xA6,0x33,0xDC,0x3A,0x3A,0xB2,0x08,0x3F}	//IRK of B	,{0x17,0x0A,0xE5,0xA7,0xEF,0x8C,0xA8,0xBA,0x06,0xC1,0x54,0xEF,0x9A,0x7A,0x34,0xD0}};
+#define IRK_LIST_NUMBER 2char * IrkListName[IRK_LIST_NUMBER] = {"A","B"};uint8_t irk[IRK_LIST_NUMBER][ESP_BT_OCTET16_LEN]= {	//IRK of A	{0x92,0xE1,0x70,0x7B,0x84,0xDC,0x21,0x4D,0xA6,0x33,0xDC,0x3A,0x3A,0xB2,0x08,0x3F}	//IRK of B	,{0x2E,0xB7,0xB3,0xD4,0xDC,0x5C,0x16,0x73,0xA7,0x9B,0x75,0x0E,0xEC,0xEB,0x60,0x2D}};
 
 
 
@@ -21,12 +21,17 @@ RF24BLE BLE(radio);
 
 void BleDataCheckTask();
 unsigned char input[32]={0};
+//there are 3 channels at which BLE broadcasts occur
+//hence channel can be 0,1,2 
+byte channel =0; //using single channel to receive
 
 void setup()
 {
     Serial.begin(115200);
     Serial.println(F("RF24_BLE_address"));
     printf_begin();
+
+	BLE.recvBegin(RECV_PAYLOAD_SIZE,channel);
 }
 
 
@@ -43,7 +48,7 @@ void loop()
 
 void BleDataCheckTask()
 {
-	byte status=BLE.recvPacket((uint8_t*)input,RECV_PAYLOAD_SIZE,1);
+	byte status=BLE.recvPacket((uint8_t*)input,RECV_PAYLOAD_SIZE,channel);
 
 	unsigned char AdMac[MAC_LEN];
 	//0x40 = Advertising package with a random private address. 
