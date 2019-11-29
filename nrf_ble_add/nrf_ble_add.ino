@@ -46,8 +46,10 @@ void BleDataCheckTask()
 	byte status=BLE.recvPacket((uint8_t*)input,RECV_PAYLOAD_SIZE,1);
 
 	unsigned char AdMac[MAC_LEN];
+	//0x40 = Advertising package with a random private address. 
 	if(input[0]==0x40)
 	{
+		//Get the MAC address. Reverse order in BT payload.
 		for (byte i = 0; i < MAC_LEN; i++)
 		{
 			AdMac[MAC_LEN-1-i] = input[i+2];
@@ -57,6 +59,7 @@ void BleDataCheckTask()
 
 		for (byte i = 0; i < IRK_LIST_NUMBER; i++)
 		{
+			//Check with all IRK we got one by one.
 			if(btm_ble_addr_resolvable(AdMac,irk[i]))
 			{
 				printf("MacAdd= %02X %02X %02X %02X %02X %02X Belongs to:%s\r\n"
