@@ -38,7 +38,7 @@ You can build the Arduino based BLE Monitor Just connect nRF24L01 module with Ar
 Most of the code is copied and pasted from the following project.Great Thanks to this great company and their amazing ESP32 module with source code.<br>
 https://github.com/espressif/esp-idf <br>
 
-# 蓝牙无线接近开关
+# 蓝牙无线接近开关 / 解析随机蓝牙地址
 
 ## 原理
 IOS的连续服务功能，会用蓝牙4.0的低功耗不断的发送“广告”包。
