@@ -330,6 +330,8 @@ enum
 #define ADV_CONFIG_FLAG                           (1 << 0)
 #define SCAN_RSP_CONFIG_FLAG                      (1 << 1)
 
+esp_bd_addr_t rand_addr = {0xC0, 0x30, 0x05, 0x70, 0x09, 0xFA};
+
 static uint8_t adv_config_done = 0;
 
 static uint16_t heart_rate_handle_table[HRS_IDX_NB];
@@ -699,6 +701,7 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event,
 	case ESP_GATTS_REG_EVT:
 		esp_ble_gap_set_device_name(EXAMPLE_DEVICE_NAME);
 		//generate a resolvable random address
+		esp_ble_gap_set_rand_addr(rand_addr);
 		esp_ble_gap_config_local_privacy(true);
 		esp_ble_gatts_create_attr_tab(heart_rate_gatt_db, gatts_if,
 			HRS_IDX_NB, HEART_RATE_SVC_INST_ID);
