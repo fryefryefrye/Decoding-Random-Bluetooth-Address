@@ -557,6 +557,13 @@ static void show_bonded_devices(void)
 		}
 		printf("\r\n");
 
+		printf("IRK,reverse order for Home Assistant ESPrensence:");
+		for (unsigned char j = 0; j < sizeof(esp_bt_octet16_t); j++)
+		{
+			printf("%02X", *(((byte*)(dev_list[i].bond_key.pid_key.irk)) + sizeof(esp_bt_octet16_t) - j -1));
+		}
+		printf("\r\n");
+
 	}
 
 	free(dev_list);
