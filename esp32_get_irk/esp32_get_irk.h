@@ -18,6 +18,7 @@ CONDITIONS OF ANY KIND, either express or implied.
 #include "esp_gattc_api.h"
 #include "esp_bt_defs.h"
 #include "esp_bt_main.h"
+#include "base64.h"
 
 //
 //char* esp_key_type_to_str(esp_ble_key_type_t key_type) {
@@ -550,14 +551,16 @@ static void show_bonded_devices(void)
 		}
 		printf("\r\n");
 
-		printf("IRK:");
+		printf("IRK: ");
 		for(unsigned char j = 0; j<sizeof(esp_bt_octet16_t); j++)
 		{
 			printf(",0x%02X",*(((byte*)(dev_list[i].bond_key.pid_key.irk))+j));
 		}
 		printf("\r\n");
 
-		printf("IRK,reverse order for Home Assistant ESPrensence:");
+		printf("IRK, Base64 encoded for the Home Assistant Private BLE Device service: %s\r\n", base64::encode(dev_list[i].bond_key.pid_key.irk, sizeof(esp_bt_octet16_t)).c_str()); 
+
+		printf("IRK, reverse order for Home Assistant ESPrensence: ");
 		for (unsigned char j = 0; j < sizeof(esp_bt_octet16_t); j++)
 		{
 			printf("%02X", *(((byte*)(dev_list[i].bond_key.pid_key.irk)) + sizeof(esp_bt_octet16_t) - j -1));
